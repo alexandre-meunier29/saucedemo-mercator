@@ -14,8 +14,10 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 driver.get("https://www.saucedemo.com/")
 
 # Login
-username_field = driver.find_element(By.ID, "user-name")
-password_field = driver.find_element(By.ID, "password")
+#username_field = driver.find_element(By.ID, "user-name")
+username_field = driver.find_element(By.XPATH, "//input[@placeholder='Username']")
+#password_field = driver.find_element(By.ID, "password")
+password_field = driver.find_element(By.XPATH, "//input[@id='password']")
 login_button = driver.find_element(By.ID, "login-button")
 
 
