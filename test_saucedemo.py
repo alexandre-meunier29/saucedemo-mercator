@@ -76,7 +76,7 @@ if __name__ == "__main__":
     # Perform actions using the Page Transactions pattern
     app.at(NavigateToLoginPage)
     app.at(Login, username="standard_user", password="secret_sauce")
-    highest_price_item = app.at(SelectHighestPricedItem)
+    highest_price_item = app.at(SelectHighestPricedItem).result
     app.at(AddToCart, highest_price_item=highest_price_item)
     cart_count = app.at(CheckCartCount)
     app.at(NavigateToCartPage)
